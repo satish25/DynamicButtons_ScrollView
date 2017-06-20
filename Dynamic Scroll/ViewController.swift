@@ -37,9 +37,39 @@ class ViewController: UIViewController {
         for _ in 1...TotlaY {
             px = 0
          
-            for j in 1...TotlatX {
+            if count < TotlatX/2 {
+                for j in 1...TotlatX/2 {
+                    count += 1
+                    
+                    let Button = UIButton()
+                    Button.tag = count
+                    Button.frame = CGRect(x: px+10, y: py+10, width: 100, height: 45)
+                    Button.backgroundColor = UIColor.black
+                    Button.setTitle("Hello \(j) ", for: .normal)
+                    Button.addTarget(self, action: #selector(scrollButtonAction), for: .touchUpInside)
+                    mScrollView.addSubview(Button)
+                    px = px + Int(mScrollView.frame.width)/2 - 30
+                }
+            }else{
+                for j in TotlatX/2+1...TotlatX {
+                    count += 1
+                    
+                    let Button = UIButton()
+                    Button.tag = count
+                    Button.frame = CGRect(x: px+10, y: py+10, width: 100, height: 45)
+                    Button.backgroundColor = UIColor.black
+                    Button.setTitle("Hello \(j) ", for: .normal)
+                    Button.addTarget(self, action: #selector(scrollButtonAction), for: .touchUpInside)
+                    mScrollView.addSubview(Button)
+                    px = px + Int(mScrollView.frame.width)/2 - 30
+                }
+
+            
+            }
+            
+            /*for j in 1...TotlatX/2 {
                 count += 1
-                
+             
                 let Button = UIButton()
                 Button.tag = count
                 Button.frame = CGRect(x: px+10, y: py+10, width: 100, height: 45)
@@ -47,9 +77,9 @@ class ViewController: UIViewController {
                 Button.setTitle("Hello \(j) ", for: .normal)
                 Button.addTarget(self, action: #selector(scrollButtonAction), for: .touchUpInside)
                 mScrollView.addSubview(Button)
-               px = px + Int(mScrollView.frame.width)/2
-            }
-            py =  Int(mScrollView.frame.height)
+               px = px + Int(mScrollView.frame.width)/2 - 30
+            }*/
+            py =  Int(mScrollView.frame.height)-75
         }
         
         mScrollView.contentSize = CGSize(width: px, height: py)
@@ -59,5 +89,5 @@ class ViewController: UIViewController {
     func scrollButtonAction(sender: UIButton) {
         print("Hello \(sender.tag) is Selected")
     }
+    
 }
-
