@@ -27,7 +27,7 @@ class ViewController: UIViewController {
         mScrollView.isScrollEnabled = true
         mScrollView.isUserInteractionEnabled = true
         
-        let TotlatX = 10
+        let TotlatX = 15
         let TotlaY = 2
         
        var count = 0
@@ -67,19 +67,7 @@ class ViewController: UIViewController {
             
             }
             
-            /*for j in 1...TotlatX/2 {
-                count += 1
-             
-                let Button = UIButton()
-                Button.tag = count
-                Button.frame = CGRect(x: px+10, y: py+10, width: 100, height: 45)
-                Button.backgroundColor = UIColor.black
-                Button.setTitle("Hello \(j) ", for: .normal)
-                Button.addTarget(self, action: #selector(scrollButtonAction), for: .touchUpInside)
-                mScrollView.addSubview(Button)
-               px = px + Int(mScrollView.frame.width)/2 - 30
-            }*/
-            py =  Int(mScrollView.frame.height)-75
+            py =  Int(mScrollView.frame.height)-70
         }
         
         mScrollView.contentSize = CGSize(width: px, height: py)
