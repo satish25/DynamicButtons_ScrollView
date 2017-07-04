@@ -15,7 +15,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        scrollViewSettings()
+        dynamicButtonCreation()
     }
 
     override func didReceiveMemoryWarning() {
@@ -23,22 +23,23 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    func scrollViewSettings() {
+    func dynamicButtonCreation() {
+        
         mScrollView.isScrollEnabled = true
         mScrollView.isUserInteractionEnabled = true
         
-        let TotlatX = 15
-        let TotlaY = 2
+        let numberOfColoums = 15
+        let numberofRows = 2
         
        var count = 0
         var px = 0
         var py = 0
         
-        for _ in 1...TotlaY {
+        for _ in 1...numberofRows {
             px = 0
          
-            if count < TotlatX/2 {
-                for j in 1...TotlatX/2 {
+            if count < numberOfColoums/2 {
+                for j in 1...numberOfColoums/2 {
                     count += 1
                     
                     let Button = UIButton()
@@ -51,7 +52,7 @@ class ViewController: UIViewController {
                     px = px + Int(mScrollView.frame.width)/2 - 30
                 }
             }else{
-                for j in TotlatX/2+1...TotlatX {
+                for j in numberOfColoums/2+1...numberOfColoums {
                     count += 1
                     
                     let Button = UIButton()
