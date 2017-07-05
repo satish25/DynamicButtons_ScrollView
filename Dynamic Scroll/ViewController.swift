@@ -11,11 +11,13 @@ import UIKit
 class ViewController: UIViewController {
 
     @IBOutlet var mScrollView: UIScrollView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        
-        dynamicButtonCreation()
+  
+        //Calling dynamicButtonCreation
+         self.dynamicButtonCreation()
     }
 
     override func didReceiveMemoryWarning() {
@@ -28,18 +30,18 @@ class ViewController: UIViewController {
         mScrollView.isScrollEnabled = true
         mScrollView.isUserInteractionEnabled = true
         
-        let numberOfColoums = 16
+        let numberOfButtons = 16
         let numberofRows = 2
         
-       var count = 0
+        var count = 0
         var px = 0
         var py = 0
         
         for _ in 1...numberofRows {
             px = 0
-         
-            if count < numberOfColoums/2 {
-                for j in 1...numberOfColoums/2 {
+            
+            if count < numberOfButtons/2 {
+                for j in 1...numberOfButtons/2 {
                     count += 1
                     
                     let Button = UIButton()
@@ -53,7 +55,7 @@ class ViewController: UIViewController {
                 }
             }else{
                 
-                for j in numberOfColoums/2+1...numberOfColoums {
+                for j in numberOfButtons/2+1...numberOfButtons {
                     count += 1
                     
                     let Button = UIButton()
@@ -65,8 +67,8 @@ class ViewController: UIViewController {
                     mScrollView.addSubview(Button)
                     px = px + Int(mScrollView.frame.width)/2 - 30
                 }
-
-            
+                
+                
             }
             
             py =  Int(mScrollView.frame.height)-70
