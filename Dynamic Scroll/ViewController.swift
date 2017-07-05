@@ -28,7 +28,7 @@ class ViewController: UIViewController {
         mScrollView.isScrollEnabled = true
         mScrollView.isUserInteractionEnabled = true
         
-        let numberOfColoums = 15
+        let numberOfColoums = 16
         let numberofRows = 2
         
        var count = 0
@@ -52,6 +52,7 @@ class ViewController: UIViewController {
                     px = px + Int(mScrollView.frame.width)/2 - 30
                 }
             }else{
+                
                 for j in numberOfColoums/2+1...numberOfColoums {
                     count += 1
                     
